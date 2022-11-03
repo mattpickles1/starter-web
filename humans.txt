@@ -3,7 +3,7 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Matthew Pickles  matt.pickles@gmail.com 
 
 # THANKS
 

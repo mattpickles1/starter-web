@@ -481,8 +481,10 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     if (this.options.parent) {
       if (typeof this.options.parent == 'string') {
         this.$parent = $($.find(this.options.parent))
-      } else if (this.options.parent && (this.options.parent.nodeType || this.options.parent.jquery)) {
+      } else if (this.options.parent && this.options.parent.nodeType) {
         this.$parent = $(this.options.parent)
+      } else if (this.options.parent && this.options.parent.jquery) {
+        this.$parent = this.options.parent
       } else {
         this.$parent = $()
       }

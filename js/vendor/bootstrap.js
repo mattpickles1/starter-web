@@ -478,7 +478,13 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     this.options       = $.extend({}, Collapse.DEFAULTS, options)
     this.transitioning = null
 
-    if (this.options.parent) this.$parent = $(this.options.parent)
+    if (this.options.parent) {
+      if (typeof this.options.parent == 'string') {
+        this.$parent = $($.find(this.options.parent))
+      } else {
+        this.$parent = $(this.options.parent)
+      }
+    }
     if (this.options.toggle) this.toggle()
   }
 
